@@ -69,6 +69,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 061e67f6f1ca17048bc1d46de3fe1924, type: 2}
+  - {fileID: 2100000, guid: 653e22023a2243446810cd40961de8eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,6 +130,7 @@ MonoBehaviour:
   maxScale: {x: 0.2896884, y: 0.69892, z: 0.3266962}
   maxCooldown: 2
   matureCooldown: 5
+  currentCooldown: 0
   watered: 0
   wateringMultiplier: 2
   currentState: 0

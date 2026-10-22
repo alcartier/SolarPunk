@@ -20,7 +20,7 @@ public class Crop : MonoBehaviour
     
     public float maxCooldown = 2f;
     public float matureCooldown = 3f;
-    private float currentCooldown = 0f;
+    [SerializeField]private float currentCooldown = 0f;
 
     [Header("Watering Settings")]
     public bool watered;
@@ -52,12 +52,15 @@ public class Crop : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+            
+            currentCooldown = maxCooldown;
+            
             if (!ScaleMultiply(scaleMultiplier))
             {
                 currentState = CropState.Dead;
                 meshRenderer.material = deadMat;
             }
-            currentCooldown = maxCooldown;
+
         }
         else
         {
@@ -83,6 +86,7 @@ public class Crop : MonoBehaviour
             {
                 newScale = new Vector3(maxScale.x, maxScale.y, maxScale.z);
                 currentState = CropState.Mature;
+                watered = false;
                 currentCooldown = matureCooldown;
             }
             LMotion.Create(transform.localScale, newScale, smoothTime)
