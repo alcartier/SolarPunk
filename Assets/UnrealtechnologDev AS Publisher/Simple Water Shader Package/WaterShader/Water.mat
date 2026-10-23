@@ -56,14 +56,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _BasedOnWorldScale: 0
-    - _Emission: 0.06
+    - _Emission: 0.081
     - _FoamAmount: 0.18
     - _FoamShoreSpeed: 0.015
     - _FoamSpeed: 0.004
     - _Intensity: 100
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 5
+    - _Scale: 6
     - _ShoreFoamAmount: 0.31
     - _ShoreFoamSpeed: 0.004
     - _ShoreFoamTreshhold: 0.62
@@ -72,7 +72,7 @@ Material:
     - _Treshhold: 0.53
     - _WaterFoamAmount: 0.17
     - _WaterFoamSpeed: 0.01
-    - _WaveIntensity: 0.03
+    - _WaveIntensity: 0.063
     - _WavesSpeed: 83.5
     m_Colors:
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
