@@ -38,6 +38,7 @@ public class Crop : MonoBehaviour
     public float smoothTime;
 
     public int scoreProvided;
+    public int scoreRemoved;
     
     private MeshRenderer meshRenderer;
     
@@ -53,6 +54,7 @@ public class Crop : MonoBehaviour
         { 
             if (currentState == CropState.Dead)
             {
+                GameManager.Instance.ChangeScore(-scoreRemoved);
                 Destroy(this.gameObject);
             }
             
