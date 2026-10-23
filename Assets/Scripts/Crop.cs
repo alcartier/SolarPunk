@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LitMotion;
 using LitMotion.Extensions;
+using UnityEngine.UI;
 
 
 public enum CropState
@@ -14,6 +15,8 @@ public enum CropState
 
 public class Crop : MonoBehaviour
 {
+    public Image fillImage;
+
     public float scaleMultiplier;
     
     public Vector3 maxScale;
@@ -54,7 +57,9 @@ public class Crop : MonoBehaviour
             }
             
             currentCooldown = maxCooldown;
-            
+            LMotion.Create(1f, 0f, maxCooldown)
+                    .Bind(x => fillImage.fillAmount = x);
+
             if (!ScaleMultiply(scaleMultiplier))
             {
                 currentState = CropState.Dead;
