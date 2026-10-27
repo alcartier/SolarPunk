@@ -15,8 +15,6 @@ public enum CropState
 
 public class Crop : MonoBehaviour
 {
-    public Image fillImage;
-
     public float scaleMultiplier;
     
     public Vector3 maxScale;
@@ -35,17 +33,27 @@ public class Crop : MonoBehaviour
     
     [Header("Growth Motion Settings")]
     public Ease easeType;
+    public Ease spawnEaseType;
     public float smoothTime;
-
+    public float spawnTime;
+    
     public int scoreProvided;
     public int scoreRemoved;
     
     private MeshRenderer meshRenderer;
     
+    public GameObject destroyParticle;
+    
     private void Start()
     {
         currentCooldown = maxCooldown;
         meshRenderer = GetComponent<MeshRenderer>();
+        
+        Vector3 scale = transform.localScale;
+        LMotion.Create(new Vector3(0,0,0), scale, 0.25f)
+            .WithEase(spawnEaseType)
+            .BindToLocalScale(transform);
+
     }
     
     void Update()
@@ -55,12 +63,11 @@ public class Crop : MonoBehaviour
             if (currentState == CropState.Dead)
             {
                 GameManager.Instance.ChangeScore(-scoreRemoved);
+                Instantiate(destroyParticle, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
             
             currentCooldown = maxCooldown;
-            LMotion.Create(1f, 0f, maxCooldown)
-                    .Bind(x => fillImage.fillAmount = x);
 
             if (!ScaleMultiply(scaleMultiplier))
             {

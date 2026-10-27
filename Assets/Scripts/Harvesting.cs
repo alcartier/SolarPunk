@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class Harvesting : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
     private CropHolder cropHolder;
     [SerializeField] private InputActionReference harvestCropAction;
     
@@ -37,7 +36,8 @@ public class Harvesting : MonoBehaviour
     {
         if (cropHolder != null && cropHolder.currentCrop != null && cropHolder.currentCrop.currentState == CropState.Mature)
         {
-            gameManager.ChangeScore(cropHolder.currentCrop.getCropScore());
+            GameManager.Instance.ChangeScore(cropHolder.currentCrop.getCropScore());
+            GameManager.Instance.Harvest();
             Destroy(cropHolder.currentCropGameObject);
             cropHolder.currentCrop = null;
             cropHolder.currentCropGameObject = null;
