@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     
     public static event Action<int> OnScoreChange;
 
+    public static event Action<int> OnHarvestChange;
+    
     private static GameManager instance = null;
     public static GameManager Instance => instance;
     private void Awake()
@@ -48,16 +50,29 @@ public class GameManager : MonoBehaviour
         return score;
     }
 
+    public int getHarvestObjective()
+    {
+        return harvestObjective;
+    }
+
     public void Harvest()
     {
         amountHarvested++;
-        
+        OnHarvestChange?.Invoke(amountHarvested);
         if (amountHarvested >= harvestObjective)
         {
             Win();
         }
     }
 
+    [ContextMenu("RESTART_GAME")]
+    public void StartNewGame()
+    {
+        score = 0;
+        amountHarvested = 0;
+        SceneControler.Instance.LoadGameScene();
+    }
+    
     public void GameOver()
     {
         Debug.Log("Lose Game Score : " + score);

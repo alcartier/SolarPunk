@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour
         
         LMotion.Create(transform.position, targetPosition, smoothTime)
             .WithEase(easeType)
-            .BindToPosition(transform);
+            .BindToPosition(transform)
+            .AddTo(gameObject);
     }
 }

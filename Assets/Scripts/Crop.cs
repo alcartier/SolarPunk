@@ -52,7 +52,8 @@ public class Crop : MonoBehaviour
         Vector3 scale = transform.localScale;
         LMotion.Create(new Vector3(0,0,0), scale, 0.25f)
             .WithEase(spawnEaseType)
-            .BindToLocalScale(transform);
+            .BindToLocalScale(transform)
+            .AddTo(gameObject);
 
     }
     

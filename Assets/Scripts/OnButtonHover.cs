@@ -23,7 +23,8 @@ public class OnButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         
         currentMotion = LMotion.Create(transform.localScale, Vector3.one * hoverScale, smoothTime)
             .WithEase(easeType)
-            .BindToLocalScale(transform);
+            .BindToLocalScale(transform)
+            .AddTo(gameObject);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -32,7 +33,8 @@ public class OnButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         
         currentMotion = LMotion.Create(transform.localScale, Vector3.one, smoothTime)
             .WithEase(easeType)
-            .BindToLocalScale(transform);
+            .BindToLocalScale(transform)
+            .AddTo(gameObject);
     }
 
     public void PlayClickSound()
