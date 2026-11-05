@@ -141,7 +141,7 @@ MonoBehaviour:
   smoothTime: 0.5
   spawnTime: 0.25
   scoreProvided: 5
-  scoreRemoved: 0
+  scoreRemoved: 5
   destroyParticle: {fileID: 5401600322658313383, guid: 2e6390ed9a988c048b82e1abb116b43e, type: 3}
 --- !u!1001 &6572579171554329521
 PrefabInstance:

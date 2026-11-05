@@ -45,6 +45,26 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "SwitchCrop-",
+                    "type": "Button",
+                    "id": "7a8f78b5-2ccc-499d-a2d5-6cf625f0b19d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "SwitchCrop+",
+                    "type": "Button",
+                    "id": "66b4ff2d-7447-487b-a083-d05079116a75",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -254,6 +274,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Harvest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba386250-06ed-489a-b6b0-0bf4ea6c9af5",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchCrop-",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e76f67c1-209b-48a2-8ff1-487a4e02d1ac",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchCrop+",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

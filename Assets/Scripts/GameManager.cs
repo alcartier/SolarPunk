@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private int harvestObjective = 15;
     
+    public int highScore = 0;
+    
+    public SceneControler sceneControler;
+    
     public static event Action<int> OnScoreChange;
 
     public static event Action<int> OnHarvestChange;
@@ -28,6 +32,11 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start()
+    {
+        Load();
     }
 
     public void ChangeScore(int amount)
@@ -70,7 +79,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         amountHarvested = 0;
-        SceneControler.Instance.LoadGameScene();
+        sceneControler.LoadGameScene();
     }
     
     public void GameOver()
@@ -81,5 +90,29 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         Debug.Log("Win Game Score : " + score);
+        if (score  > highScore)
+        {
+            highScore = score;
+        }
+        Save();
     }
-}
+
+    private void Save()
+    {
+        PlayerPrefs.SetInt("HighScore", highScore);
+    }
+
+    void Load()
+    {
+        int highScoreSaved = PlayerPrefs.GetInt("HighScore");
+        if (highScoreSaved == null)
+        {
+            highScore = 0;
+        }
+        else
+        {
+            highScore = highScoreSaved;
+        }
+
+    }
+}   

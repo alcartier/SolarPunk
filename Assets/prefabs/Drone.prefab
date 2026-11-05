@@ -72,6 +72,10 @@ MonoBehaviour:
   spawnPoint: {fileID: 4733366516492598362}
   seedPrefab: {fileID: 1917364323362282874, guid: 1ae9a53793822f44ebde5368696d7356, type: 3}
   plantSeedAction: {fileID: -1220462049988132586, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
+  nextCropAction: {fileID: 0}
+  previousCropAction: {fileID: 0}
+  crops: []
+  currentCropId: 0
 --- !u!114 &2345570870653028346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df6dc2475df02040b336a1e3e7e463f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gameManager: {fileID: 0}
   harvestCropAction: {fileID: -757452673914315521, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
 --- !u!65 &4293043236817062987
 BoxCollider:
@@ -264,8 +267,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.9
-      minScalar: 0.6
+      scalar: 1
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1531,7 +1534,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 41056
+        atime1: 60331
         atime2: 65535
         atime3: 65535
         atime4: 0

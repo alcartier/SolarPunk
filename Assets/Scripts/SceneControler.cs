@@ -1,37 +1,60 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneControler : MonoBehaviour
 {
     
-    private static SceneControler instance = null;
-    public static SceneControler Instance => instance;
-    private void Awake()
+    public Image image;
+
+    private void Start()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-        }
+        GameManager.Instance.sceneControler = this;
+        StartCoroutine(FadeOut("MainMenu",1f));
     }
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("Game", LoadSceneMode.Single);
+        StartCoroutine(FadeIn("Game", 1f));
     }
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        StartCoroutine(FadeIn("MainMenu",1f));
     }
     
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator FadeIn(string sceneName, float duration)
+    {
+        float t = 0;
+        Color c = image.color;
+        while(t < duration)
+        {
+            t += Time.deltaTime;
+            c.a = t / duration;
+            image.color = c;
+            yield return null;
+        }
+        
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+    
+    IEnumerator FadeOut(string sceneName, float duration)
+    {
+        float t = 0;
+        Color c = image.color;
+        while(t < duration)
+        {
+            t += Time.deltaTime;
+            c.a = 1f - (t / 1);
+            image.color = c;
+            yield return null;
+        }
     }
 }
