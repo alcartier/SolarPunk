@@ -4156,34 +4156,6 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 2229508134162311827, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1323f2843ee46514c8be7cd4de41cd27, type: 2}
-    - target: {fileID: 2229508134162311827, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2229508134162311827, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2229508134162311827, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2229508134162311827, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 5228352922432821852, guid: 1323f2843ee46514c8be7cd4de41cd27, type: 2}
-    - target: {fileID: 2229508134162311827, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2229508134162311827, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5683397825955549248, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
       propertyPath: m_Name
       value: StartBtn

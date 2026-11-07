@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3595909103140338235}
   - component: {fileID: 4293043236817062987}
   - component: {fileID: 1741251780224734225}
+  - component: {fileID: 4902692593464593697}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -72,9 +73,11 @@ MonoBehaviour:
   spawnPoint: {fileID: 4733366516492598362}
   seedPrefab: {fileID: 1917364323362282874, guid: 1ae9a53793822f44ebde5368696d7356, type: 3}
   plantSeedAction: {fileID: -1220462049988132586, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
-  nextCropAction: {fileID: 0}
-  previousCropAction: {fileID: 0}
-  crops: []
+  nextCropAction: {fileID: -5507933309434029732, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
+  previousCropAction: {fileID: 4675077860680896082, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
+  crops:
+  - {fileID: 11400000, guid: d773e3a8133489445b03dd9d872a92ef, type: 2}
+  - {fileID: 11400000, guid: ab022186a34748c46878fc8edcb70868, type: 2}
   currentCropId: 0
 --- !u!114 &2345570870653028346
 MonoBehaviour:
@@ -149,8 +152,29 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &4902692593464593697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203543295476661141}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4277310906992480204
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +291,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
