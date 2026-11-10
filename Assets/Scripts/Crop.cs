@@ -56,7 +56,23 @@ public class Crop : MonoBehaviour
             .AddTo(gameObject);
 
     }
-    
+
+    private void OnEnable()
+    {
+        GameManager.OnGameEnd2 += DestroyThis;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameEnd2 -= DestroyThis;
+
+    }
+
+    private void DestroyThis()
+    {
+        Destroy(this.gameObject);
+    }
+
     void Update()
     {
         if (currentCooldown <= 0)
@@ -65,7 +81,7 @@ public class Crop : MonoBehaviour
             {
                 GameManager.Instance.ChangeScore(-scoreRemoved);
                 Instantiate(destroyParticle, transform.position, Quaternion.identity);
-                Destroy(this.gameObject);
+                DestroyThis();
             }
             
             currentCooldown = maxCooldown;

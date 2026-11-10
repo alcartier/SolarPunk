@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,12 +14,18 @@ public class GameManager : MonoBehaviour
     public int highScore = 0;
     
     public SceneControler sceneControler;
-    
+
+    public float gameDuration = 120f;
+    private float timeLeft;
+
     public static event Action<int> OnScoreChange;
 
     public static event Action<int> OnHarvestChange;
-    
+
+    public static event Action<float> OnTimerChange;
+
     public static event Action<bool,int,int> OnGameEnd;
+    public static event Action OnGameEnd2;
     
     private static GameManager instance = null;
     public static GameManager Instance => instance;
@@ -39,6 +46,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Load();
+        timeLeft = gameDuration;
+        StartCoroutine(GameTimer());
     }
 
     public void ChangeScore(int amount)
@@ -87,7 +96,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         OnGameEnd?.Invoke(false,score,highScore);
+        OnGameEnd2?.Invoke();
         Debug.Log("Lose Game Score : " + score);
+        StopAllCoroutines();
     }
 
     public void Win()
@@ -99,6 +110,8 @@ public class GameManager : MonoBehaviour
         }
         Save();
         OnGameEnd?.Invoke(true,score,highScore);
+        OnGameEnd2?.Invoke();
+        StopAllCoroutines();
     }
 
     private void Save()
@@ -119,4 +132,26 @@ public class GameManager : MonoBehaviour
         }
 
     }
-}   
+
+
+    IEnumerator<WaitForSeconds> GameTimer()
+    {
+        while (true)
+        {
+
+            timeLeft--;
+
+            if (timeLeft < 0)
+            {
+                GameOver();
+                StopAllCoroutines();
+            }
+            else
+            {
+                OnTimerChange?.Invoke(timeLeft);
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
+    }
+}
