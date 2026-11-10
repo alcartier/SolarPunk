@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Harvesting : MonoBehaviour
 {
-    private CropHolder cropHolder;
+    [SerializeField] CropHolder cropHolder;
     [SerializeField] private InputActionReference harvestCropAction;
     
     private void OnEnable()

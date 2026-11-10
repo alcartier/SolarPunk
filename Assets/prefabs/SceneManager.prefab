@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneControler
   image: {fileID: 0}
+  inputActions: {fileID: -944628639613478452, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}

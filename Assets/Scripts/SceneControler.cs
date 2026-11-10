@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -8,7 +9,8 @@ public class SceneControler : MonoBehaviour
 {
     
     public Image image;
-
+    [SerializeField] InputActionAsset inputActions;
+    
     private void Start()
     {
         GameManager.Instance.sceneControler = this;
@@ -17,6 +19,7 @@ public class SceneControler : MonoBehaviour
 
     public void LoadGameScene()
     {
+        inputActions.FindActionMap("Player").Enable();
         StartCoroutine(FadeIn("Game", 1f));
     }
 

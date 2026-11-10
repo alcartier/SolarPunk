@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public static event Action<int> OnHarvestChange;
     
+    public static event Action<bool,int,int> OnGameEnd;
+    
     private static GameManager instance = null;
     public static GameManager Instance => instance;
     private void Awake()
@@ -84,6 +86,7 @@ public class GameManager : MonoBehaviour
     
     public void GameOver()
     {
+        OnGameEnd?.Invoke(false,score,highScore);
         Debug.Log("Lose Game Score : " + score);
     }
 
@@ -95,6 +98,7 @@ public class GameManager : MonoBehaviour
             highScore = score;
         }
         Save();
+        OnGameEnd?.Invoke(true,score,highScore);
     }
 
     private void Save()
