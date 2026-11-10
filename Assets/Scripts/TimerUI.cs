@@ -17,8 +17,6 @@ public class TimerUI : MonoBehaviour
     private void Start()
     {
         gameDuration = GameManager.Instance.gameDuration;
-
-        //UpdateTimer(gameDuration);
     }
 
     private void OnEnable()
@@ -37,16 +35,19 @@ public class TimerUI : MonoBehaviour
     {
         timerText.text = (newTime+1).ToString();
 
-        currentMotion = LMotion.Create(timerFill.fillAmount, newTime/gameDuration, 1f)
-        .Bind(value => timerFill.fillAmount = value);
+        currentMotion = LMotion.Create(timerFill.fillAmount, newTime / gameDuration, 1f)
+        .Bind(value => timerFill.fillAmount = value)
+        .AddTo(timerFill);
     }
 
     private void EndTimer()
     {
         timerText.text = "0";
-        if (currentMotion != null)
-        {
+        if (timerFill.fillAmount > 0) {
             currentMotion.Cancel();
+            currentMotion = LMotion.Create(timerFill.fillAmount, 0 / gameDuration, 0.25f)
+    .Bind(value => timerFill.fillAmount = value)
+    .AddTo(timerFill);
         }
     }
 }

@@ -14,6 +14,16 @@ public class GameTimer : MonoBehaviour
         StartCoroutine(gameTimer());
     }
 
+    private void OnEnable()
+    {
+        GameManager.OnGameEnd2 += StopAllCoroutines;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameEnd2 -= StopAllCoroutines;
+    }
+
     IEnumerator<WaitForSeconds> gameTimer()
     {
         while (true)

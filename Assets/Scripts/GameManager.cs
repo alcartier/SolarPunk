@@ -91,8 +91,8 @@ public class GameManager : MonoBehaviour
     
     public void GameOver()
     {
-        OnGameEnd?.Invoke(false,score,highScore);
         OnGameEnd2?.Invoke();
+        OnGameEnd?.Invoke(false,score,highScore);
         Debug.Log("Lose Game Score : " + score);
     }
 
@@ -104,8 +104,8 @@ public class GameManager : MonoBehaviour
             highScore = score;
         }
         Save();
-        OnGameEnd?.Invoke(true,score,highScore);
         OnGameEnd2?.Invoke();
+        OnGameEnd?.Invoke(true,score,highScore);
     }
 
     private void Save()
