@@ -18,18 +18,18 @@ public class TimerUI : MonoBehaviour
     {
         gameDuration = GameManager.Instance.gameDuration;
 
-        UpdateTimer(gameDuration);
+        //UpdateTimer(gameDuration);
     }
 
     private void OnEnable()
     {
-        GameManager.OnTimerChange += UpdateTimer;
+        GameTimer.OnTimerChange += UpdateTimer;
         GameManager.OnGameEnd2 += EndTimer;
     }
 
     private void OnDisable()
     {
-        GameManager.OnTimerChange -= UpdateTimer;
+        GameTimer.OnTimerChange -= UpdateTimer;
         GameManager.OnGameEnd2 -= EndTimer;
     }
 
@@ -44,6 +44,9 @@ public class TimerUI : MonoBehaviour
     private void EndTimer()
     {
         timerText.text = "0";
-        currentMotion.Cancel();
+        if (currentMotion != null)
+        {
+            currentMotion.Cancel();
+        }
     }
 }

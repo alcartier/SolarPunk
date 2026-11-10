@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
 
     public static event Action<int> OnHarvestChange;
 
-    public static event Action<float> OnTimerChange;
-
     public static event Action<bool,int,int> OnGameEnd;
     public static event Action OnGameEnd2;
     
@@ -46,8 +44,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Load();
-        timeLeft = gameDuration;
-        StartCoroutine(GameTimer());
     }
 
     public void ChangeScore(int amount)
@@ -98,7 +94,6 @@ public class GameManager : MonoBehaviour
         OnGameEnd?.Invoke(false,score,highScore);
         OnGameEnd2?.Invoke();
         Debug.Log("Lose Game Score : " + score);
-        StopAllCoroutines();
     }
 
     public void Win()
@@ -111,7 +106,6 @@ public class GameManager : MonoBehaviour
         Save();
         OnGameEnd?.Invoke(true,score,highScore);
         OnGameEnd2?.Invoke();
-        StopAllCoroutines();
     }
 
     private void Save()
@@ -129,29 +123,6 @@ public class GameManager : MonoBehaviour
         else
         {
             highScore = highScoreSaved;
-        }
-
-    }
-
-
-    IEnumerator<WaitForSeconds> GameTimer()
-    {
-        while (true)
-        {
-
-            timeLeft--;
-
-            if (timeLeft < 0)
-            {
-                GameOver();
-                StopAllCoroutines();
-            }
-            else
-            {
-                OnTimerChange?.Invoke(timeLeft);
-            }
-
-            yield return new WaitForSeconds(1f);
         }
     }
 }
