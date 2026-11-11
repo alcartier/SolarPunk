@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97850de65724dc34f9ac23d8454c4924, type: 3}
+  m_Name: Corn
+  m_EditorClassIdentifier: Assembly-CSharp::CropSO
+  cropName: Corn
+  cropSprite: {fileID: -1609437291465001125, guid: 264aa400f11141d4986073906daa21ae, type: 3}
+  cropPrefab: {fileID: 6502023167374603811, guid: 585cd9f55af604c45af0b54ca13f330a, type: 3}

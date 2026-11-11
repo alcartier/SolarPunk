@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: Assembly-CSharp::CropSO
   cropName: Carrot
-  cropSprite: {fileID: 8492509043593250957, guid: 066465d35eed558458d59de014d2d2df, type: 3}
+  cropSprite: {fileID: -5859083586626064994, guid: f251bcfbc4b978345b66acd063e407f5, type: 3}
   cropPrefab: {fileID: 6502023167374603811, guid: dc1ad6de350027541a429b1b236860f6, type: 3}

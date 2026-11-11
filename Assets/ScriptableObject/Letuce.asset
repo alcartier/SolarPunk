@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97850de65724dc34f9ac23d8454c4924, type: 3}
   m_Name: Letuce
   m_EditorClassIdentifier: Assembly-CSharp::CropSO
-  cropName: Letuce
-  cropSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  cropName: Cauliflower
+  cropSprite: {fileID: 6835861606320445515, guid: b62a1ac226e84a043b49df616fc93989, type: 3}
   cropPrefab: {fileID: 6502023167374603811, guid: 3a75a81b6b9a68640a772e86aef89785, type: 3}

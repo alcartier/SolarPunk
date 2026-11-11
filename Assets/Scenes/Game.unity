@@ -924,7 +924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 190.08405, y: -1.1002808}
+  m_AnchoredPosition: {x: 190.08398, y: -1.1003418}
   m_SizeDelta: {x: 188.8382, y: 42.923706}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &240829053
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   target: {fileID: 4207684759529153654}
   offset: {x: 0, y: 5, z: -7.99}
-  smoothTime: 0.3
+  smoothTime: 1
   easeType: 26
 --- !u!1001 &356181830
 PrefabInstance:
@@ -3173,7 +3173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 58.2, y: -32.4}
+  m_AnchoredPosition: {x: 58.19995, y: -32.400024}
   m_SizeDelta: {x: 118.756714, y: 42.9237}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &795093856
@@ -3441,7 +3441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 271.14978, y: -1.1000366}
+  m_AnchoredPosition: {x: 271.14978, y: -1.1000977}
   m_SizeDelta: {x: 81.065796, y: 42.92401}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &833279695
@@ -3760,6 +3760,10 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 317437488}
+    - target: {fileID: 1528083646379193215, guid: 13f08122c0e773d4a8f9bf223037fe00, type: 3}
+      propertyPath: fadeDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3854288163900917538, guid: 13f08122c0e773d4a8f9bf223037fe00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.59845
@@ -6951,26 +6955,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone
       objectReference: {fileID: 0}
-    - target: {fileID: 4293043236817062987, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
-      propertyPath: m_Size.x
-      value: 0.76410526
+    - target: {fileID: 2252086171812583681, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
+      propertyPath: crops.Array.size
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4293043236817062987, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
-      propertyPath: m_Size.z
-      value: 0.8183893
-      objectReference: {fileID: 0}
-    - target: {fileID: 4293043236817062987, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
-      propertyPath: m_Center.x
-      value: 0.011847585
-      objectReference: {fileID: 0}
-    - target: {fileID: 4293043236817062987, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
-      propertyPath: m_Center.z
-      value: 0.004883364
-      objectReference: {fileID: 0}
-    - target: {fileID: 6550819451164780430, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
-      propertyPath: tiltSmoothing
-      value: 0.05
-      objectReference: {fileID: 0}
+    - target: {fileID: 2252086171812583681, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
+      propertyPath: 'crops.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 33295d851b3f8804bb4604ea1341568d, type: 2}
     - target: {fileID: 6962782455588563309, guid: efb80b6069d38b745a752f9965f499fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7087,6 +7079,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 949740715}
   - {fileID: 1338279988}
+  - {fileID: 7435168968486665589}
   - {fileID: 4207684759529153653}
   - {fileID: 238506034}
   - {fileID: 745077336}
@@ -7106,4 +7099,3 @@ SceneRoots:
   - {fileID: 1207393684}
   - {fileID: 1379923851}
   - {fileID: 766478385}
-  - {fileID: 7435168968486665589}
