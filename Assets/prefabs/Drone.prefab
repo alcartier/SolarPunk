@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4293043236817062987}
   - component: {fileID: 1741251780224734225}
   - component: {fileID: 4902692593464593697}
+  - component: {fileID: -1733473514972762824}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -79,6 +80,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d773e3a8133489445b03dd9d872a92ef, type: 2}
   - {fileID: 11400000, guid: ab022186a34748c46878fc8edcb70868, type: 2}
   currentCropId: 0
+  dropSound: {fileID: 8300000, guid: 721377a32458f8a488c06109d55f664c, type: 3}
 --- !u!114 &2345570870653028346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   waterCropAction: {fileID: -6000389724523685851, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
   waterParticles: {fileID: 416641214257157408}
+  wateringSound: {fileID: 8300000, guid: 38dcbc2c1d1c2e840b09870ec952b020, type: 3}
 --- !u!114 &3595909103140338235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   cropHolder: {fileID: 0}
   harvestCropAction: {fileID: -757452673914315521, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
+  harvestSound: {fileID: 8300000, guid: b5a410f71b68a054ebe717f1f2128695, type: 3}
 --- !u!65 &4293043236817062987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,6 +180,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &-1733473514972762824
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203543295476661141}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 2c475bdebad3fe74cadfdc92722a25b2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4871472867640860073
 GameObject:
   m_ObjectHideFlags: 0

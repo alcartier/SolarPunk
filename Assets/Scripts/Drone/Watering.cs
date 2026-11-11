@@ -8,6 +8,8 @@ public class Watering : MonoBehaviour
     [SerializeField] private InputActionReference waterCropAction;
     [SerializeField] private ParticleSystem waterParticles;
     
+    public AudioClip wateringSound;
+    
     private void OnEnable()
     {
         waterCropAction.action.performed += WaterCrop;
@@ -37,6 +39,7 @@ public class Watering : MonoBehaviour
     private void WaterCrop(InputAction.CallbackContext context)
     {
         waterParticles.Play();
+        AudioSource.PlayClipAtPoint(wateringSound, this.transform.position, 1f);
         if (cropHolder != null && cropHolder.currentCrop != null)
         {
             cropHolder.currentCrop.watered = true;

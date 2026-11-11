@@ -20,6 +20,8 @@ public class Crop : MonoBehaviour
     public float maxScaleFactor = 2f;
     
     private Vector3 maxScale;
+
+    public AudioClip destroySound;
     
     [Header("Timings")]
     public float growthCooldown = 2f;
@@ -33,6 +35,7 @@ public class Crop : MonoBehaviour
     public CropState currentState = CropState.Young;
     
     public Material deadMat;
+    public Material grownMat;
     
     [Header("Growth Motion Settings")]
     public Ease easeType;
@@ -85,6 +88,7 @@ public class Crop : MonoBehaviour
             {
                 GameManager.Instance.ChangeScore(-scoreRemoved);
                 Instantiate(destroyParticle, transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(destroySound, this.transform.position, 1f);
                 DestroyThis();
                 return;
             }
@@ -123,6 +127,7 @@ public class Crop : MonoBehaviour
                 newScale = new Vector3(maxScale.x, maxScale.y, maxScale.z);
                 currentState = CropState.Mature;
                 watered = false;
+                meshRenderer.material = grownMat;
                 currentCooldown = matureCooldown;
             }
             LMotion.Create(transform.localScale, newScale, smoothTime)

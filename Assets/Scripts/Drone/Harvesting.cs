@@ -5,6 +5,8 @@ public class Harvesting : MonoBehaviour
 {
     [SerializeField] private CropHolder cropHolder;
     [SerializeField] private InputActionReference harvestCropAction;
+    public AudioClip harvestSound;
+    
     
     private void OnEnable()
     {
@@ -38,6 +40,7 @@ public class Harvesting : MonoBehaviour
         {
             GameManager.Instance.ChangeScore(cropHolder.currentCrop.getCropScore());
             GameManager.Instance.Harvest();
+            AudioSource.PlayClipAtPoint(harvestSound, this.transform.position, 100f);
             Destroy(cropHolder.currentCropGameObject);
             cropHolder.currentCrop = null;
             cropHolder.currentCropGameObject = null;

@@ -16,6 +16,8 @@ public class DropSeed : MonoBehaviour
     
     public int currentCropId = 0;
     
+    public AudioClip dropSound;
+    
     //event Pour UI
     public static event Action<Sprite> OnCropChange;
 
@@ -48,6 +50,7 @@ public class DropSeed : MonoBehaviour
 
     private void PlantSeed(InputAction.CallbackContext context)
     {
+        AudioSource.PlayClipAtPoint(dropSound, this.transform.position, 1f);
         var curSeed = Instantiate(seedPrefab, spawnPoint.position, spawnPoint.rotation);
         curSeed.GetComponent<SeedOnCollision>().cropPrefab = crops[currentCropId].cropPrefab;
     }
