@@ -40,8 +40,8 @@ public class Harvesting : MonoBehaviour
         {
             GameManager.Instance.ChangeScore(cropHolder.currentCrop.getCropScore());
             GameManager.Instance.Harvest();
-            AudioSource.PlayClipAtPoint(harvestSound, this.transform.position, 100f);
-            Destroy(cropHolder.currentCropGameObject);
+            AudioSource.PlayClipAtPoint(harvestSound, this.transform.position, 1f);
+            cropHolder.currentCropGameObject.GetComponent<Crop>().Harvest();
             cropHolder.currentCrop = null;
             cropHolder.currentCropGameObject = null;
         }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CropSO
   cropName: Cauliflower
   cropSprite: {fileID: 6835861606320445515, guid: b62a1ac226e84a043b49df616fc93989, type: 3}
-  cropPrefab: {fileID: 6502023167374603811, guid: 3a75a81b6b9a68640a772e86aef89785, type: 3}
+  cropPrefab: {fileID: 4257727510758394766, guid: 80b572cf91ddae841b7c1db212d10f62, type: 3}

@@ -22,13 +22,13 @@ public class TimerUI : MonoBehaviour
     private void OnEnable()
     {
         GameTimer.OnTimerChange += UpdateTimer;
-        GameManager.OnGameEnd2 += EndTimer;
+        GameManager.OnGameCleanup += EndTimer;
     }
 
     private void OnDisable()
     {
         GameTimer.OnTimerChange -= UpdateTimer;
-        GameManager.OnGameEnd2 -= EndTimer;
+        GameManager.OnGameCleanup -= EndTimer;
     }
 
     private void UpdateTimer(float newTime)

@@ -16,12 +16,12 @@ public class GameTimer : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnGameEnd2 += StopAllCoroutines;
+        GameManager.OnGameCleanup += StopAllCoroutines;
     }
 
     private void OnDisable()
     {
-        GameManager.OnGameEnd2 -= StopAllCoroutines;
+        GameManager.OnGameCleanup -= StopAllCoroutines;
     }
 
     IEnumerator<WaitForSeconds> gameTimer()

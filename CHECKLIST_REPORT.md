@@ -44,15 +44,16 @@
 
 ## 4. Creer des Prefabs reutilisables et bien organises
 
-| Critere | Statut | Detail |
-|---------|--------|--------|
-| Graines, legumes et effets sont des Prefabs | :white_check_mark: OUI | Seed.prefab, Carrot/Letuce/Corn.prefab, SmokePuffDestroy/Spawn.prefab, WaterParticles.prefab. |
-| Les Prefabs sont ranges dans `Prefabs/` | :white_check_mark: OUI | Dossier `prefabs/` avec sous-dossiers Crops/, UI/, Utils/, VFX/. Quelques prefabs a la racine (Dirt, Seed, Drone) qui gagneraient a etre ranges dans un sous-dossier. |
-| Modifier un Prefab change toutes ses instances | :white_check_mark: OUI | Comportement standard Unity, les prefabs sont utilises correctement. |
-| Les parametres utiles sont exposes dans l'Inspector | :white_check_mark: OUI | Vitesse du drone, durees de croissance, objectif de recolte, references audio/UI, tous exposes. |
-| Un Prefab Variant ou un Nested Prefab est utilise | :warning: PARTIEL | **Nested Prefab : OUI** — Drone.prefab contient WaterParticles en nested, les crops contiennent SmokePuff en nested. **Prefab Variant : NON** — les 3 crops sont des prefabs independants, pas des variantes d'un prefab de base. |
+| Critere                                             | Statut                 | Detail                                                                                                                                                                                                                            |
+| --------------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Graines, legumes et effets sont des Prefabs         | :white_check_mark: OUI | Seed.prefab, Carrot/Letuce/Corn.prefab, SmokePuffDestroy/Spawn.prefab, WaterParticles.prefab.                                                                                                                                     |
+| Les Prefabs sont ranges dans `Prefabs/`             | :white_check_mark: OUI | Dossier `prefabs/` avec sous-dossiers Crops/, UI/, Utils/, VFX/. Quelques prefabs a la racine (Dirt, Seed, Drone) qui gagneraient a etre ranges dans un sous-dossier.                                                             |
+| Modifier un Prefab change toutes ses instances      | :white_check_mark: OUI | Comportement standard Unity, les prefabs sont utilises correctement.                                                                                                                                                              |
+| Les parametres utiles sont exposes dans l'Inspector | :white_check_mark: OUI | Vitesse du drone, durees de croissance, objectif de recolte, references audio/UI, tous exposes.                                                                                                                                   |
+| Un Prefab Variant ou un Nested Prefab est utilise   | :warning: PARTIEL      | **Nested Prefab : OUI** — Drone.prefab contient WaterParticles en nested, les crops contiennent SmokePuff en nested. **Prefab Variant : NON** — les 3 crops sont des prefabs independants, pas des variantes d'un prefab de base. |
 
 **Suggestion :** Creer un Prefab de base "CropBase" et en deriver Carrot, Letuce, Corn comme Prefab Variants. C'est le cas d'usage ideal pour cette fonctionnalite.
+---------c'est FAIT
 
 ---
 
@@ -92,12 +93,12 @@
 
 ## 8. Structurer le code avec les cycles MonoBehaviour
 
-| Critere | Statut | Detail |
-|---------|--------|--------|
-| Start, Update, OnTriggerEnter/Exit utilises a bon escient | :white_check_mark: OUI | Chaque callback Unity est utilise de maniere appropriee. |
-| Chaque script a une responsabilite claire | :warning: QUASI | La plupart des scripts sont bien decoupes (1 script = 1 responsabilite). `GameManager` est legerement surcharge (score + harvest + win/lose + save/load + timer duration) mais c'est acceptable pour la taille du projet. `SceneFade.cs` est vide (code mort). |
-| Un legume recolte est detruit | :white_check_mark: OUI | |
-| Les noms de variables et scripts indiquent clairement ce qu'ils contiennent | :warning: PARTIEL | **Problemes de nommage :** `OnGameEnd2` (nom obscur — devrait etre `OnGameCleanup`), `getHarvestObjective`/`getCropScore` (camelCase au lieu de PascalCase), `ActiveMenu` (devrait etre `ActivateMenu`), `SceneControler` (typo — `SceneController`), `backGround` (devrait etre `background`), `Letuce` (typo — `Lettuce`). |
+| Critere                                                                     | Statut                 | Detail                                                                                                                                                                                                                                                                                                                       |
+| --------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Start, Update, OnTriggerEnter/Exit utilises a bon escient                   | :white_check_mark: OUI | Chaque callback Unity est utilise de maniere appropriee.                                                                                                                                                                                                                                                                     |
+| Chaque script a une responsabilite claire                                   | :warning: QUASI        | La plupart des scripts sont bien decoupes (1 script = 1 responsabilite). `GameManager` est legerement surcharge (score + harvest + win/lose + save/load + timer duration) mais c'est acceptable pour la taille du projet. `SceneFade.cs` est vide (code mort).                                                               |
+| Un legume recolte est detruit                                               | :white_check_mark: OUI |                                                                                                                                                                                                                                                                                                                              |
+| Les noms de variables et scripts indiquent clairement ce qu'ils contiennent | :warning: PARTIEL      | **Problemes de nommage :** `OnGameEnd2` (nom obscur — devrait etre `OnGameCleanup`), `getHarvestObjective`/`getCropScore` (camelCase au lieu de PascalCase), `ActiveMenu` (devrait etre `ActivateMenu`), `SceneControler` (typo — `SceneController`), `backGround` (devrait etre `background`), `Letuce` (typo — `Lettuce`). |
 
 ---
 

@@ -49,6 +49,7 @@ public class Crop : MonoBehaviour
     private MeshRenderer meshRenderer;
     
     public GameObject destroyParticle;
+    public GameObject harvestParticle;
     
     private void Start()
     {
@@ -66,12 +67,12 @@ public class Crop : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnGameEnd2 += DestroyThis;
+        GameManager.OnGameCleanup += DestroyThis;
     }
 
     private void OnDisable()
     {
-        GameManager.OnGameEnd2 -= DestroyThis;
+        GameManager.OnGameCleanup -= DestroyThis;
 
     }
 
@@ -139,6 +140,12 @@ public class Crop : MonoBehaviour
         return false;
     }
 
+    public void Harvest()
+    {
+        Instantiate(harvestParticle, transform.position, Quaternion.identity);
+        DestroyThis();
+    }
+    
     public int getCropScore()
     {
         return scoreProvided;
