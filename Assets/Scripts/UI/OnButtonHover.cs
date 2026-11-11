@@ -23,6 +23,7 @@ public class OnButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         
         currentMotion = LMotion.Create(transform.localScale, Vector3.one * hoverScale, smoothTime)
             .WithEase(easeType)
+            .WithScheduler(MotionScheduler.UpdateIgnoreTimeScale)
             .BindToLocalScale(transform)
             .AddTo(gameObject);
     }
@@ -33,6 +34,7 @@ public class OnButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         
         currentMotion = LMotion.Create(transform.localScale, Vector3.one, smoothTime)
             .WithEase(easeType)
+            .WithScheduler(MotionScheduler.UpdateIgnoreTimeScale)
             .BindToLocalScale(transform)
             .AddTo(gameObject);
     }

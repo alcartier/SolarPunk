@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 285e8ed5baac84f4b9ee140690678f65, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6ff0a0a779d54591a2df3a8729a0f931, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -751,8 +751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0013987221, y: 0}
-  m_SizeDelta: {x: 256.8772, y: 46.489105}
+  m_AnchoredPosition: {x: -0.0000076294, y: 0}
+  m_SizeDelta: {x: 349.0715, y: 63.1742}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &347384817
 MonoBehaviour:
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SOLAR PUNK GARDEN
+  m_text: 'Harvest Protocol '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0e7ebd949d7410c4881d249dc89ac71b, type: 2}
   m_sharedMaterial: {fileID: -1121995158389499659, guid: 0e7ebd949d7410c4881d249dc89ac71b, type: 2}
@@ -801,8 +801,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 54.96
+  m_fontSizeBase: 54.96
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1713,6 +1713,10 @@ PrefabInstance:
     - target: {fileID: 5683397825955549248, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
       propertyPath: m_Name
       value: SettingsBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683397825955549248, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8554604476987850657, guid: 4535ead35804ef645989a92b94e8361e, type: 3}
       propertyPath: m_Pivot.x
