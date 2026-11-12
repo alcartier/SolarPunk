@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using LitMotion;
 using LitMotion.Extensions;
@@ -13,13 +14,20 @@ public class OnButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public AudioClip hoverSound;
     public AudioClip clickSound;
     
-    private MotionHandle currentMotion;
     
+    private AudioSource audioSource;
+    private MotionHandle currentMotion;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (currentMotion.IsActive()) currentMotion.Cancel();
         
-        AudioSource.PlayClipAtPoint(hoverSound, Camera.main.transform.position, 1f);
+        if (hoverSound != null) audioSource.PlayOneShot(hoverSound);
         
         currentMotion = LMotion.Create(transform.localScale, Vector3.one * hoverScale, smoothTime)
             .WithEase(easeType)
@@ -42,6 +50,6 @@ public class OnButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void PlayClickSound()
     {
         if (currentMotion.IsActive()) currentMotion.Cancel();
-        AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
+        if (clickSound != null) audioSource.PlayOneShot(clickSound);
     }
 }

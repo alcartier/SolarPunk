@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using LitMotion;
 using LitMotion.Extensions;
@@ -26,7 +27,7 @@ public class Crop : MonoBehaviour
     [Header("Timings")]
     public float growthCooldown = 2f;
     public float matureCooldown = 3f;
-    [SerializeField]private float currentCooldown = 0f;
+    private float currentCooldown = 0f;
 
     [Header("Watering Settings")]
     public bool watered;
@@ -50,6 +51,8 @@ public class Crop : MonoBehaviour
     
     public GameObject destroyParticle;
     public GameObject harvestParticle;
+    
+    public static event Action OnDeath;
     
     private void Start()
     {
@@ -90,6 +93,7 @@ public class Crop : MonoBehaviour
                 GameManager.Instance.ChangeScore(-scoreRemoved);
                 Instantiate(destroyParticle, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(destroySound, this.transform.position, 1f);
+                OnDeath?.Invoke();
                 DestroyThis();
                 return;
             }

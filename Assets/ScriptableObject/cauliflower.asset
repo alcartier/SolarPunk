@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97850de65724dc34f9ac23d8454c4924, type: 3}
+  m_Name: cauliflower
+  m_EditorClassIdentifier: Assembly-CSharp::CropSO
+  cropName: Cauliflower
+  cropSprite: {fileID: 6835861606320445515, guid: b62a1ac226e84a043b49df616fc93989, type: 3}
+  cropPrefab: {fileID: 4257727510758394766, guid: 80b572cf91ddae841b7c1db212d10f62, type: 3}

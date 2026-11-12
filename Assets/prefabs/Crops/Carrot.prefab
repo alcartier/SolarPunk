@@ -56,6 +56,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -8334712894361917868, guid: 0adbf6f94e5df5d4895b3a8ea45da691, type: 3}
+    - target: {fileID: 2380052521671219312, guid: dc1ad6de350027541a429b1b236860f6, type: 3}
+      propertyPath: scoreRemoved
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380052521671219312, guid: dc1ad6de350027541a429b1b236860f6, type: 3}
+      propertyPath: scoreProvided
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380052521671219312, guid: dc1ad6de350027541a429b1b236860f6, type: 3}
+      propertyPath: growthCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380052521671219312, guid: dc1ad6de350027541a429b1b236860f6, type: 3}
+      propertyPath: matureCooldown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380052521671219312, guid: dc1ad6de350027541a429b1b236860f6, type: 3}
+      propertyPath: maxScaleFactor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6502023167374603811, guid: dc1ad6de350027541a429b1b236860f6, type: 3}
       propertyPath: m_Name
       value: Carrot

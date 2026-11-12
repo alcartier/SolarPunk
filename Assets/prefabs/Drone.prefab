@@ -78,6 +78,7 @@ MonoBehaviour:
   previousCropAction: {fileID: 4675077860680896082, guid: ef29f2b1afa02d548af7a4f808e5a788, type: 3}
   crops:
   - {fileID: 11400000, guid: d773e3a8133489445b03dd9d872a92ef, type: 2}
+  - {fileID: 11400000, guid: 33295d851b3f8804bb4604ea1341568d, type: 2}
   - {fileID: 11400000, guid: ab022186a34748c46878fc8edcb70868, type: 2}
   currentCropId: 0
   dropSound: {fileID: 8300000, guid: 721377a32458f8a488c06109d55f664c, type: 3}
