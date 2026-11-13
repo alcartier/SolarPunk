@@ -25,6 +25,7 @@ public class SceneControler : MonoBehaviour
     public void LoadGameScene()
     {
         inputActions.FindActionMap("Player").Enable();
+        GameManager.Instance.StartNewGame();
         StartCoroutine(FadeIn("Game", fadeDuration));
     }
 

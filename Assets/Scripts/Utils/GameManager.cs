@@ -87,7 +87,6 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         amountHarvested = 0;
-        sceneControler.LoadGameScene();
     }
     
     public void GameOver()
